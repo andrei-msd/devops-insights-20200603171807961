@@ -21,7 +21,6 @@ function AppContainer(props) {
 
     return (
         <div>
-        Hello world!
             <div className="row mt-4">
                 <div className="col-sm-4"></div>
                 <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
