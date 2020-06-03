@@ -30,7 +30,7 @@ function City(props) {
                         type="text" 
                         className="form-control" 
                         id="usr" 
-                        placeholder="NZ City"
+                        placeholder="NZ City Name"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                                 validate(event);
