@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-function Zip(props) {
+function City(props) {
 
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        const zipCodePattern = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
-        const valid = zipCodePattern.test(event.target.value);
+        const cityPattern = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+        const valid = cityPattern.test(event.target.value);
         if (!valid) {
             setValidationError('Should be a city name');
             props.clearResponse();
         } else {
             setValidationError('');
-            props.onZipChange(event.target.value);
+            props.onCityChange(event.target.value);
         }
     };
 
@@ -46,4 +46,4 @@ function Zip(props) {
     );
 }
 
-export default Zip
+export default City
