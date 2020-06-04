@@ -47,12 +47,12 @@ module.exports = {
         await demodoi.navigate().waitForElementVisible('@inputText');
 
         await demodoi.setValue('@inputText', [
-            'ABCDE',
+            '12345',
             browser.Keys.ENTER
           ]);
     
         await demodoi.waitForElementNotPresent('@table');
 
-        demodoi.expect.element('@invalidCity').text.to.equal('* should be a 5 digit number only');
+        demodoi.expect.element('@invalidCity').text.to.equal('* should be a an NZ city name');
     },
 };

@@ -16,6 +16,7 @@ function CityResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
+        if(props.responseData.sys.country === 'NZ'){
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
@@ -53,6 +54,12 @@ function CityResponse(props) {
             </div>
         )
     }
+    else{
+        return(
+            <div className="text-danger big">{"City not found. Must be an NZ location"}</div>
+        )
+    }
+}
     return null
 }
   

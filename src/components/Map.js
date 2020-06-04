@@ -45,11 +45,13 @@ export class Map extends Component {
                 }}
                 onClick={this.onClick}
             >
-              {this.state.markers.map((marker) => (
-                <Marker
-                  position={marker.position}
-                />
-              ))}
+                {this.state.markers.map((marker) => (
+              <Marker
+                position={marker.position}
+                key={marker}
+              />
+            ))}
+
             </GoogleMap>
         );
       }
