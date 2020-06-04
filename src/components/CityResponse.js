@@ -1,6 +1,8 @@
 import React from 'react';
+import firebase from '../firebase.js';
 
 function CityResponse(props) {
+    const db = firebase.firestore();
 
     if(props.responseData === null || props.responseData === '') {
         return null;
@@ -17,6 +19,9 @@ function CityResponse(props) {
 
     if(props.responseData.cod === 200) {
         if(props.responseData.sys.country === 'NZ'){
+            db.collection("city").doc(props.responseData.name).set({
+                name: props.responseData.name}, 
+                {merge: true});
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
