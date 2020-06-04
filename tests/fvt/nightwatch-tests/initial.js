@@ -38,7 +38,7 @@ module.exports = {
     
         await demodoi.waitForElementNotPresent('@table');
 
-        demodoi.expect.element('@cityNotFound').text.to.equal('city not found');
+        demodoi.expect.element('@cityNotFound').text.to.equal('City not found. Must be an NZ location');
     },
 
     'Navigate to the DemoDOI - invalid input': async (browser) => {
@@ -53,6 +53,6 @@ module.exports = {
     
         await demodoi.waitForElementNotPresent('@table');
 
-        demodoi.expect.element('@invalidCity').text.to.equal('* should be a an NZ city name');
+        demodoi.expect.element('@invalidCity').text.to.equal('* Must be a an NZ city name');
     },
 };

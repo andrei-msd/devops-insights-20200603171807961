@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import fetch from 'isomorphic-unfetch'
 import CityResponse from '../components/CityResponse';
 import City from '../components/City';
 import Map from '../components/Map.js'
+
 
 function AppContainer(props) {
 
@@ -22,6 +23,7 @@ function AppContainer(props) {
         //console.log(json);
         setResponseData(json);
     }
+    
 
     const clearResponse = () => {
         setResponseData('');
@@ -30,8 +32,9 @@ function AppContainer(props) {
     return (
         <div>       
             <div className="row mt-4">     
-                <div className="col-sm-4"></div>    
+                <div className="col-sm-4"></div>  
                 <City onCityChange={handleCityChange} clearResponse={clearResponse}/>
+                
                 <div className="col-sm-4"></div>    
             </div>  
             <div className="row mt-4">
