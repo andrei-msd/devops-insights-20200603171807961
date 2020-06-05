@@ -4,8 +4,6 @@ import firebase from '../firebase.js';
 function CityResponse(props) {
     const db = firebase.firestore();
 
-
-
     if(props.responseData === null || props.responseData === '') {
         return null;
     }
