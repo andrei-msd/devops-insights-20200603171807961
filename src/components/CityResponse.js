@@ -1,6 +1,8 @@
 import React from 'react';
+import firebase from '../firebase.js';
 
 function CityResponse(props) {
+    const db = firebase.firestore();
 
 
 
@@ -19,6 +21,14 @@ function CityResponse(props) {
 
     if(props.responseData.cod === 200) {
         if(props.responseData.sys.country === 'NZ'){
+            db.collection("city").doc(props.responseData.name).set({
+                name: props.responseData.name,
+                country: props.responseData.sys.country,
+                dateSearched: firebase.firestore.Timestamp.now()},
+                {merge: true})
+                .catch(function(error) {
+                    console.error("Error writing document city: ", error);
+                });
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
