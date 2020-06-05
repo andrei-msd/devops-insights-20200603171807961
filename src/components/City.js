@@ -1,25 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import firebase from '../firebase.js';
 
 function City(props) {
-    const db = firebase.firestore();
-
-    useEffect(() => {
-          
-          db.collection("city").orderBy("dateSearched", "desc").limit(1)
-          .get()
-          .then(function(querySnapshot) {
-              querySnapshot.forEach(function(doc) {
-                  props.onCityChange(doc.data().name);
-              });
-          })
-          .catch(function(error) {
-              console.log("Error getting documents: ", error);
-          });
-
-      
-      }, []);
-    
 
     const [validationError, setValidationError] = useState(null);
 
